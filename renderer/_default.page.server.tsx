@@ -20,7 +20,8 @@ export const passToClient = [
   'currentUser',
   'isProduction',
   'queryParams',
-  'authToken'
+  'authToken',
+  'routeParams'
 ];
 
 export { render };
@@ -50,6 +51,7 @@ const render: RenderFn = async pageContext => {
             appearance={appearance}
             currentUser={currentUser}
             queryParams={queryParams}
+            routeParams={pageContext.routeParams}
           />
         </PageWrapper>
       </I18nextProvider>

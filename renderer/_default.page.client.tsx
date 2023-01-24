@@ -19,7 +19,8 @@ async function render(pageContext: PageContext) {
     currentUser,
     isProduction,
     queryParams,
-    authToken
+    authToken,
+    routeParams
   } = pageContext;
 
   const apolloClient = await makeApolloClient(
@@ -43,6 +44,7 @@ async function render(pageContext: PageContext) {
             appearance={appearance}
             currentUser={currentUser}
             queryParams={queryParams}
+            routeParams={pageContext.routeParams}
           />
         </PageWrapper>
       </I18nextProvider>
